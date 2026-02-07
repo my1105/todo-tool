@@ -88,7 +88,7 @@
                     <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                         <i class="fa-regular fa-calendar text-gray-400"></i>
                     </div>
-                    <input type="datetime-local" id="due-date" name="deadline" class="block w-full pl-12 pr-4 py-3 bg-transparent border border-transparent rounded-xl text-gray-700 placeholder-gray-400 focus:bg-white focus:border-gray-200 focus:ring-2 focus:ring-gray-100 focus:outline-none transition-all duration-300 font-light appearance-none">
+                    <input type="datetime-local" id="due-date" name="due_date" class="block w-full pl-12 pr-4 py-3 bg-transparent border border-transparent rounded-xl text-gray-700 placeholder-gray-400 focus:bg-white focus:border-gray-200 focus:ring-2 focus:ring-gray-100 focus:outline-none transition-all duration-300 font-light appearance-none">
                     <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none">
                         <i class="fa-solid fa-chevron-down text-xs text-gray-400"></i>
                     </div>

@@ -9,11 +9,8 @@ class TasksController extends Controller
 {
     public function store(Request $request)
     {
-        $task = $request->input('task');
-        $result = Task::create([
-            'task' => $task
-            ]);
-
+        $validated = $request->validate(Task::$rules);
+        $result = Task::create($validated);
         return $result->id;
     }
 
