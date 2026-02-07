@@ -13,5 +13,13 @@ class TasksController extends Controller
         $result = Task::create($validated);
         return $result->id;
     }
-
+    public function index()
+    {
+        $tasks = Task::all();
+        return view(
+            'tasks.index',
+            [
+                'tasks' => $tasks]
+        );
+    }
 }
