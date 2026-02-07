@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TasksController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -14,7 +15,4 @@ Route::get('/tasks/create', function () {
     return view('tasks.create');
 });
 
-Route::post('/tasks/create', function () {
-    $task = request('task');
-    return  $task;
-});
+Route::post('/tasks/create', [TasksController::class,'store']);

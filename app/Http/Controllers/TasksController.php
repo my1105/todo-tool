@@ -6,5 +6,10 @@ use Illuminate\Http\Request;
 
 class TasksController extends Controller
 {
-    //
+    public function store(Request $request)
+    {
+        $task = $request->input('task');
+        return "Task received: " . $task;
+    }
+
 }
