@@ -64,6 +64,7 @@
 
         <!-- Input Form -->
         <form action="" method="post" class="bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] p-8 animate-slide-up">
+            @csrf
             <div class="mb-8 group">
                 <label for="task-content" class="block text-xs font-bold tracking-widest uppercase mb-2 flex items-center gap-2">
                     <i class="fa-solid fa-circle-exclamation"></i>
