@@ -9,3 +9,7 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('about.index');
 });
+
+Route::get('/tasks/create', function () {
+    return view('tasks.create');
+});
