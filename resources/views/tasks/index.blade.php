@@ -74,7 +74,7 @@
 
                         <div class="flex flex-col gap-1 w-full">
                             <!-- Task Text Link -->
-                            <a href="#" class="task-text text-lg font-light text-gray-700 leading-snug hover:text-[#3b82f6] transition-colors block">
+                            <a href="{{ route('tasks.edit',$task->id) }}" class="task-text text-lg font-light text-gray-700 leading-snug hover:text-[#3b82f6] transition-colors block">
                                 {{ $task->task }}
                             </a>
                             @if($task->due_date)
