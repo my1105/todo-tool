@@ -9,7 +9,7 @@ class TasksController extends Controller
 {
     public function store(Request $request)
     {
-        $validated = $request->validate(Task::$rules);
+        $validated = $request->validate(Task::$rules, Task::$message);
         $result = Task::create($validated);
         return $result->id;
     }

@@ -15,4 +15,8 @@ class Task extends Model
         'task' => 'required',
         'due_date' => 'nullable|date',
     ];
+
+    public static $message = [
+        'task.required' => 'タスクの内容を入力してください',
+    ];
 }
