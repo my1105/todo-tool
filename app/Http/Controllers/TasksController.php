@@ -11,8 +11,10 @@ class TasksController extends Controller
     {
         $validated = $request->validate(Task::$rules, Task::$message);
         $result = Task::create($validated);
-        return $result->id;
+        session()->flash('success', 'タスクを追加しました');
+        return redirect()->route('tasks.index');
     }
+
     public function index()
     {
         $tasks = Task::all();
@@ -49,6 +51,7 @@ class TasksController extends Controller
     {
         $task = Task::findOrFail($id);
         $task->delete();
+        session()->flash('success', 'タスクを削除しました');
         return redirect()->route('tasks.index');
     }
 

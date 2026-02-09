@@ -51,12 +51,14 @@
             </div>
         </header>
 
-        <!--
+        @if(session('success'))
         <div class="mb-6 px-4">
             <div class="bg-green-100 border border-green-200 text-green-800 text-sm rounded-lg px-4 py-3" role="alert">
+                {{ session('success') }}
             </div>
         </div>
-        -->
+        @endif
+
 
 
         <!-- Task List (Static Content) -->
