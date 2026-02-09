@@ -11,12 +11,9 @@ Route::get('/about', function () {
     return view('about.index');
 });
 
-Route::get('/tasks/create', function () {
-    return view('tasks.create');
-});
-
-Route::get('/tasks', [TasksController::class,'index']);
-Route::post('/tasks/create', [TasksController::class,'store']);
+Route::get('/tasks', [TasksController::class,'index'])->name('tasks.index');
+Route::get('/tasks/create', [TasksController::class,'create'])->name('tasks.create');
+Route::post('/tasks/create', [TasksController::class,'store'])->name('tasks.store');
 Route::get('/tasks/{id}/edit', [TasksController::class,'edit'])->name('tasks.edit');
 Route::post('/tasks/{id}/edit', [TasksController::class,'update'])->name('tasks.update');
-Route::post('/tasks/{id}/delete', [TasksController::class,'destroy'])->name('tasks.destroy');
+Route::delete('/tasks/{id}', [TasksController::class,'destroy'])->name('tasks.destroy');

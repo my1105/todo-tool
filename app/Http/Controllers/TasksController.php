@@ -25,8 +25,31 @@ class TasksController extends Controller
     public function edit($id)
     {
         $task = Task::findOrFail($id);
-        return view('tasks.edit', [
+        return view(
+            'tasks.edit',
+            [
             'task' => $task
-        ]);
+            ]
+        );
     }
+    public function update(Request $request, $id)
+    {
+        $task = Task::findOrFail($id);
+        $validated = $request->validate(Task::$rules, Task::$message);
+        $task->update($validated);
+        return redirect()->route('tasks.index');
+    }
+
+    public function create()
+    {
+        return view('tasks.create');
+    }
+
+    public function destroy($id)
+    {
+        $task = Task::findOrFail($id);
+        $task->delete();
+        return redirect()->route('tasks.index');
+    }
+
 }

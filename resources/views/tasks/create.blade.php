@@ -55,7 +55,7 @@
         <!-- Header Area -->
         <header class="mb-8 px-2">
             <div class="flex items-center gap-4">
-                <a href="index.html" class="text-gray-400 hover:text-[#1a1a1a] transition-colors" aria-label="戻る">
+                <a href="{{ route('tasks.index') }}" class="text-gray-400 hover:text-[#1a1a1a] transition-colors" aria-label="戻る">
                     <i class="fa-solid fa-arrow-left text-lg"></i>
                 </a>
                 <h1 class="text-lg font-medium tracking-wide text-[#1a1a1a]">New Task</h1>
