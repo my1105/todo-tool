@@ -70,10 +70,12 @@
                 <li class="task-item group flex items-start justify-between p-5 hover:bg-gray-50 transition-colors duration-200">
                     <div class="flex items-start gap-4 flex-1 min-w-0">
                         <!-- Checkbox Icon Link -->
-                        <a href="#" class="mt-1 text-gray-300 hover:text-[#1a1a1a] transition-colors text-xl" aria-label="完了にする">
-                            <i class="fa-regular fa-square"></i>
-                        </a>
-
+                        <form action="{{ route('tasks.done', $task->id) }}" method="POST">
+                        @csrf
+                            <button type="submit" class="mt-1 text-gray-300 hover:text-[#1a1a1a] transition-colors text-xl" aria-label="完了にする">
+                                <i class="fa-regular {{ $task->done ? 'fa-check-square' : 'fa-square' }}"></i>
+                            </button>
+                        </form>
                         <div class="flex flex-col gap-1 w-full">
                             <!-- Task Text Link -->
                             <a href="{{ route('tasks.edit',$task->id) }}" class="task-text text-lg font-light text-gray-700 leading-snug hover:text-[#3b82f6] transition-colors block">

@@ -55,4 +55,13 @@ class TasksController extends Controller
         return redirect()->route('tasks.index');
     }
 
+    public function done($id)
+    {
+        $task = Task::findOrFail($id);
+        $task->done = !$task->done;
+        $task->save();
+        session()->flash('success', 'タスクをの状態を変更しました');
+        return redirect()->route('tasks.index');
+    }
+
 }
